@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/convertTemplate.js"></script>
+    <title>example page for convertTemplate.js</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+        * {
+            text-decoration: none;
+            font-family: "나눔고딕코딩", "Nanum Gothic Coding", 'Malgun Gothic';
+            font-size: 14pt;
+            color: #1C140D;
+            box-sizing: border-box;
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+            -webkit-text-size-adjust: none; }
+
+        *:active, *:hover, *:focus {
+            outline: none; }
+        html{height:100%;}
+        body{
+            height:100%;
+            background-color:#FFFFFF;
+            background-image:url('img/background.jpg');
+        }
+        body #overlay{
+            background-color:rgba(255,255,255,0.6);
+            position:absolute;
+            width:100%;
+            height:100%;
+            padding:3em;
+            font-size:1em;
+        }
+        body h1{
+            font-size:3em;
+        }
+        body h2{
+            font-size:1.5em;
+            margin-bottom:1em;
+        }
+        body a:hover{
+            color:#3498db;
+        }
+        body .description{
+            margin-top:1em;
+            margin-bottom:1em;
+            white-space:pre-wrap;
+            line-height:1.3em;
+        }
+        body .panel{
+            display:inline-block;
+            padding:1em;
+            border:0.1em solid #FFFFFF;
+            background-color:#ecf0f1;
+
+            margin-bottom:1em;
+        }
+        body .panel:hover{
+            border-color:#3498db;
+        }
+        .panel .title{
+            color:#2c3e50;
+        }
+        .panel .source{
+            color:#34495e;
+            white-space:pre-wrap;
+            margin-top:2em;
+            background-color:#FFFFFF;
+            padding:0.8em;
+        }
+    </style>
+</head>
+<body>
+<div id="overlay">
+    <h1>ConvertTemplate.js</h1>
+    <div class="description">
+This is plugin for Javascript and you can use this plugin to convert your template.
+You can use this to all characters.
+    </div>
+    <h2>HOW TO USE?</h2>
+    <div class="description">Use function 'from' in 'convertTemplate' object.
+You can use two format to get result.
+
+<b>First</b> is to list the parameters.
+>   convertTemplate("TEMPLATE TO CONVERT", {VARIABLES});
+
+<b>Second</b> is to use object.
+>   convertTemplate({
+        frame: "TEMPLATE TO CONVERT",
+        variable: {VARIABLES},
+        head: "HEAD CHARACTER",
+        tail: "TAIL CHARACTER"
+    });
+    </div>
+    <h2>EXAMPLE</h2>
+    <div id="brackets" class="panel">
+        <div class="title">Convert the text by using the <b>brackets</b> : My job is <b>[job]</b>.</div>
+        <div class="entry"><b>></b> </div>
+        <div class="source">convertTemplate.from({
+    frame:"My job is [job]",
+    variable:{job:"Developer"},
+    head:"[",
+    tail:"]"
+});</div>
+    </div>
+    <div id="parenthesis" class="panel">
+        <div class="title">Convert the text by using the <b>parenthesis</b> : I love <b>(language)</b>!</div>
+        <div class="entry"><b>></b> </div>
+        <div class="source">convertTemplate.from({
+    frame:"I love (language)!",
+    variable:{language:"javascript"},
+    head:"(",
+    tail:")"
+});</div>
+    </div>
+    <div id="brace" class="panel">
+        <div class="title">Convert the text by using the <b>brace</b> : My name is <b>{name}</b>. and I'm a <b>{gender}</b></div>
+        <div class="entry"><b>></b> </div>
+        <div class="source">convertTemplate.from("My name is {name}. and I'm {gender}", {name:"HansolLim",gender:"male"});</div>
+    </div>
+    <div class="description">
+Developer's Blog - <a href="http://hsol.tistory.com">http://hsol.tistory.com</a>
+Developer's Email - <a href="mailto:molmoty@gmail.com">molmoty@gmail.com</a>
+    </div>
+</div>
+
+<script>
+    var convert = {
+        brace : function(){
+            document.querySelector("#brace .entry").innerHTML += convertTemplate.from("My name is {name}. and I'm {gender}", {name:"HansolLim",gender:"male"});
+        },
+        brackets : function(){
+            document.querySelector("#brackets .entry").innerHTML += convertTemplate.from({
+                frame:"My job is [job]",
+                variable:{job:"Developer"},
+                head:"[", tail:"]"
+            });
+        },
+        parenthesis : function(){
+            document.querySelector("#parenthesis .entry").innerHTML += convertTemplate.from({
+                frame:"I love (language)!",
+                variable:{language:"javascript"},
+                head:"(",
+                tail:")"
+            });
+        }
+    };
+
+    document.getElementById("brace").addEventListener('click', convert.brace());
+    document.getElementById("brackets").addEventListener('click', convert.brackets());
+    document.getElementById("parenthesis").addEventListener('click', convert.parenthesis());
+
+    document.querySelector("#overlay").style.height = document.body.scrollHeight + "px";
+</script>
+</body>
+</html>
