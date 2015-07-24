@@ -48,6 +48,9 @@ Convert the text by using the parenthesis : I love (language)!
     });
 
 Convert the text by using the brace : My name is {name}. and I'm a {gender}
+
+You know, default character is brace. *"{}"*
+
 > My name is HansolLim. and I'm male
 
     convertTemplate.from("My name is {name}. and I'm {gender}", {name:"HansolLim",gender:"male"});
