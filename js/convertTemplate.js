@@ -15,14 +15,14 @@ convertTemplate = {
 						noObject: "Can't find option object, please insert your own option.",
 						noFrame : "Can't find 'template' in option, please insert your own template.",
 						noVar : "Can't find 'variable' in option, please insert your own variable."
-					},
+					}
 			};
 			try{
 				if(simpleFormat != undefined){
 					var simpleFormat = {
 							frame: option,
 							variable: simpleFormat
-					}
+					};
 					option = simpleFormat;
 				}
 				if(option){
@@ -76,15 +76,14 @@ convertTemplate = {
 				}
 				else if((typeof object) == 'string'){
 					try{
-						object = JSON.parse(object);
-						return tFunction.get.keys(object);
+						return this.keys(JSON.parse(object));
 					}
 					catch(error){
-						console.error("[tFunction.get.keys] " + error.message);
+						console.error("[convertTemplate.get.keys] " + error.message);
 					}
 				}
 				else{
-					console.error("[tFunction.get.keys] please insert data typeof 'object' or 'JSON'");
+					console.error("[convertTemplate.get.keys] please insert data typeof 'object' or 'JSON'");
 				}
 			},
 			result : function(){
