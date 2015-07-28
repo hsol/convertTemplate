@@ -4,7 +4,7 @@ ConvertTemplate.js
 This is plugin for Javascript and you can use this plugin to convert your template.
 You can use this to all characters.
     
->*example link* <a href=http://codepen.io/anon/pen/xGQZrd>http://codepen.io/anon/pen/xGQZrd</a>
+>*example link* <a href=http://codepen.io/anon/pen/aOQdyW?editors=001>codepen.io</a>
 
 
 HOW TO USE?
