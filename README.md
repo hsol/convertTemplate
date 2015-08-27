@@ -14,11 +14,11 @@ You can use two format to get result.
 
 First is to list the parameters.
 
-    convertTemplate("TEMPLATE TO CONVERT", {VARIABLES});
+    convertTemplate.from("TEMPLATE TO CONVERT", {VARIABLES});
 
 Second is to use object.
 
-    convertTemplate({
+    convertTemplate.from({
     	frame: "TEMPLATE TO CONVERT",
     	variable: {VARIABLES},
     	head: "HEAD CHARACTER",
