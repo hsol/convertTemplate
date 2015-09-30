@@ -57,6 +57,7 @@ Default character is brace. *"{}"*
 
     convertTemplate.from(frame(string), variable(object));
 
+and example
 
 > My name is HansolLim. and I'm male
 
