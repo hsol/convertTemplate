@@ -51,7 +51,11 @@ Convert the text by using the parenthesis : I love (language)!
 
 Convert the text by using the brace : My name is {name}. and I'm a {gender}
 
-You know what? default character is brace. *"{}"*
+Default character is brace. *"{}"*
+*from* method can use like this case.
+
+    convertTemplate.from(frame(string), variable(object));
+
 
 > My name is HansolLim. and I'm male
 
