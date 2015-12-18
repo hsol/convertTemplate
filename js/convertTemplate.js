@@ -1,5 +1,4 @@
-(function() {
-	window.convertTemplate = {
+convertTemplate = {
 		template : {
 			frame : "",
 			variable : {},
@@ -97,15 +96,13 @@
 				}
 
 				for ( var idx in realVar) {
-					var regTemp = new RegExp(convertTemplate.template.head
-							+ realVar[idx] + convertTemplate.template.tail,
-							"gi");
-					frame = frame.replace(regTemp, realData[idx]).replace(
-							/&lt;/gi, "<").replace(/&gt;/gi, ">");
+					frame = frame
+							.replace(new RegExp("\\"+convertTemplate.template.head+realVar[idx]+"\\"+convertTemplate.template.tail,"g"), realData[idx])
+							.replace(/&lt;/gi, "<")
+							.replace(/&gt;/gi, ">");
 				}
 
 				return frame;
 			}
 		}
 	};
-});
