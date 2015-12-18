@@ -91,7 +91,8 @@ You can use two format to get result.
         frame: "TEMPLATE TO CONVERT",
         variable: {VARIABLES},
         head: "HEAD CHARACTER",
-        tail: "TAIL CHARACTER"
+        tail: "TAIL CHARACTER",
+        case: "REGULAR EXPRESSIONS CASE"
     });
 
 You know what? default head & tail is brace. "{}"
@@ -104,7 +105,8 @@ You know what? default head & tail is brace. "{}"
     frame:"My job is [job]",
     variable:{job:"Developer"},
     head:"[",
-    tail:"]"
+    tail:"]",
+    case:"gi"
 });</div>
     </div>
     <div id="parenthesis" class="panel">
@@ -114,7 +116,8 @@ You know what? default head & tail is brace. "{}"
     frame:"I love (language)!",
     variable:{language:"javascript"},
     head:"(",
-    tail:")"
+    tail:")",
+    case:"gi"
 });</div>
     </div>
     <div id="brace" class="panel">
@@ -145,7 +148,8 @@ Developer's Email - <a href="mailto:molmoty@gmail.com">molmoty@gmail.com</a>
                 frame:"I love (language)!",
                 variable:{language:"javascript"},
                 head:"(",
-                tail:")"
+                tail:")",
+            	case:"gi"
             });
         }
     };
