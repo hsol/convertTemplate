@@ -4,7 +4,7 @@ ConvertTemplate.js
 This is plugin for Javascript and you can use this plugin to convert your template.
 You can use this to all characters.
     
->*example link* <a href=http://bit.ly/1TP20bb target=_blank>http://bit.ly/1TP20bb</a>
+>*example link* <a href=http://hsol.github.io/convertTemplate.js/example.html target=_blank>http://hsol.github.io/convertTemplate.js/example.html</a>
 
 
 HOW TO USE?
